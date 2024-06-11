@@ -10,7 +10,6 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":game-player"))
     testImplementation(kotlin("test"))
 }
 
