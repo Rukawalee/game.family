@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     testImplementation(kotlin("test"))
 }
 
