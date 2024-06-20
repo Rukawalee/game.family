@@ -2,6 +2,9 @@ package com.rukawa.game.family.werewolf.cache
 
 import com.rukawa.game.family.player.dto.PlayerDTO
 
+/**
+ * 狼人杀房间
+ */
 class WerewolfRoom {
 
     /**
@@ -26,7 +29,7 @@ class WerewolfRoom {
      * key: seatOrder
      * value: seat
      */
-    var seatMap: Map<Int, Seat> = HashMap()
+    var werewolfSeatMap: Map<Int, WerewolfSeat> = HashMap()
 
     /**
      * 村民位
@@ -51,5 +54,7 @@ class WerewolfRoom {
      * value: seatOrder
      */
     var thirdSeats: Set<Int> = HashSet()
+
+
 
 }

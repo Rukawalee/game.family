@@ -39,6 +39,8 @@ allprojects {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation(project(":game-werewolf"))
+    implementation(project(":game-common"))
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

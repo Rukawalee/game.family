@@ -4,9 +4,9 @@ import com.rukawa.game.family.player.dto.PlayerDTO
 import com.rukawa.game.family.werewolf.enums.WerewolfStatus
 
 /**
- * 座位
+ * 狼人杀座位
  */
-class Seat {
+class WerewolfSeat {
 
     /**
      * 座位序号

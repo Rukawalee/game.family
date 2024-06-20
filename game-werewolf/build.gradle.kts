@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation(project(":game-player"))
+    implementation(project(":game-common"))
     testImplementation(kotlin("test"))
 }
 
