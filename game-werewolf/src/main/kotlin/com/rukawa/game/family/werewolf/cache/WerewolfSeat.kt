@@ -1,6 +1,7 @@
 package com.rukawa.game.family.werewolf.cache
 
 import com.rukawa.game.family.player.dto.PlayerDTO
+import com.rukawa.game.family.werewolf.constant.WerewolfRole
 import com.rukawa.game.family.werewolf.enums.WerewolfStatus
 
 /**
