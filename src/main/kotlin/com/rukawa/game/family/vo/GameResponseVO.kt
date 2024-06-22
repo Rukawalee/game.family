@@ -1,6 +1,6 @@
 package com.rukawa.game.family.vo
 
-import com.rukawa.game.family.common.constant.ResponseCode
+import org.springframework.http.HttpStatus
 
 /**
  * 响应
@@ -20,7 +20,7 @@ class GameResponseVO<T> {
     /**
      * 请求状态
      */
-    var status: String? = null
+    var reason: String? = null
 
     /**
      * 错误信息
@@ -32,17 +32,17 @@ class GameResponseVO<T> {
      */
     fun success(t:T?): GameResponseVO<T> {
         this.data = t
-        this.code = ResponseCode.SUCCESS.code
-        this.status = ResponseCode.SUCCESS.status
+        this.code = HttpStatus.OK.value()
+        this.reason = HttpStatus.OK.reasonPhrase
         return this
     }
 
     /**
      * 失败
      */
-    fun fail(responseCode: ResponseCode, errorMsg:String): GameResponseVO<T> {
-        this.code = responseCode.code
-        this.status = responseCode.status
+    fun fail(responseStatus: HttpStatus, errorMsg:String): GameResponseVO<T> {
+        this.code = responseStatus.value()
+        this.reason = responseStatus.reasonPhrase
         this.msg = errorMsg
         return this
     }

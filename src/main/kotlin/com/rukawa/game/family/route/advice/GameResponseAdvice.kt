@@ -1,9 +1,9 @@
 package com.rukawa.game.family.route.advice
 
-import com.rukawa.game.family.common.constant.ResponseCode
 import com.rukawa.game.family.vo.GameResponseVO
 import org.apache.commons.lang3.exception.ExceptionUtils
 import org.springframework.core.MethodParameter
+import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.converter.HttpMessageConverter
 import org.springframework.http.server.ServerHttpRequest
@@ -37,7 +37,7 @@ class GameResponseAdvice : ResponseBodyAdvice<Any> {
             response.success(body)
         } catch (e: Exception) {
             val errorMsg = ExceptionUtils.getMessage(e)
-            response.fail(ResponseCode.FAIL, errorMsg)
+            response.fail(HttpStatus.INTERNAL_SERVER_ERROR, errorMsg)
         }
         return response
     }

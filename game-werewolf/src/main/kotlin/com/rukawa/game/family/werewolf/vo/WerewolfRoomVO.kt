@@ -1,4 +1,4 @@
-package com.rukawa.game.family.route.werewolf.vo
+package com.rukawa.game.family.werewolf.vo
 
 /**
  * 狼人杀房间

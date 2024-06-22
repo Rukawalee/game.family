@@ -1,6 +1,6 @@
 package com.rukawa.game.family.route.werewolf
 
-import com.rukawa.game.family.route.werewolf.vo.WerewolfRoomVO
+import com.rukawa.game.family.werewolf.vo.WerewolfRoomVO
 import com.rukawa.game.family.werewolf.dto.WerewolfRoomQueryDTO
 import org.springframework.web.bind.annotation.*
 
