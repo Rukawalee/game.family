@@ -3,7 +3,7 @@ package com.rukawa.game.family.werewolf.constant
 /**
  * 狼人杀技能
  */
-enum class WerewolfSkill {
+enum class WerewolfSkillConst {
 
     /**
      * 黑夜击杀
@@ -43,12 +43,12 @@ enum class WerewolfSkill {
     /**
      * 技能名
      */
-    private var skillName: String? = null
+    var skillName: String? = null
 
     /**
      * 技能介绍
      */
-    private var skillIntroductions: List<String>? = null
+    var skillIntroductions: List<String>? = null
 
     constructor(skillName: String?, skillIntroductions: List<String>?) {
         this.skillName = skillName

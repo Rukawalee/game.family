@@ -3,7 +3,7 @@ package com.rukawa.game.family.common.dto
 /**
  * 分页查询
  */
-open class PageQueryDTO {
+open class PageDTO {
 
     /**
      * 当前页
@@ -14,5 +14,10 @@ open class PageQueryDTO {
      * 每页数量
      */
     var pageSize: Int = 10
+
+    /**
+     * 总数
+     */
+    var total: Int? = null
 
 }

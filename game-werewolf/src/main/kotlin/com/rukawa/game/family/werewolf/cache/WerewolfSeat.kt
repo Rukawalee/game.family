@@ -1,8 +1,8 @@
 package com.rukawa.game.family.werewolf.cache
 
 import com.rukawa.game.family.player.dto.PlayerDTO
-import com.rukawa.game.family.werewolf.constant.WerewolfRole
-import com.rukawa.game.family.werewolf.constant.WerewolfStatus
+import com.rukawa.game.family.werewolf.constant.WerewolfRoleConst
+import com.rukawa.game.family.werewolf.constant.WerewolfStatusConst
 
 /**
  * 狼人杀座位
@@ -17,7 +17,7 @@ class WerewolfSeat {
     /**
      * 座位（玩家）状态
      */
-    var status: WerewolfStatus = WerewolfStatus.SURVIVE
+    var status: WerewolfStatusConst = WerewolfStatusConst.REMAIN
 
     /**
      * 玩家
@@ -27,6 +27,6 @@ class WerewolfSeat {
     /**
      * 狼人杀角色
      */
-    var werewolfRole: WerewolfRole? = null
+    var werewolfRoleConst: WerewolfRoleConst? = null
 
 }

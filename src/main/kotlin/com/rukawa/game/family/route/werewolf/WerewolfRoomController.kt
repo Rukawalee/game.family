@@ -1,7 +1,7 @@
 package com.rukawa.game.family.route.werewolf
 
-import com.rukawa.game.family.werewolf.vo.WerewolfRoomVO
-import com.rukawa.game.family.werewolf.dto.WerewolfRoomQueryDTO
+import com.rukawa.game.family.werewolf.vo.room.WerewolfRoomPageVO
+import com.rukawa.game.family.werewolf.dto.room.WerewolfRoomDTO
 import org.springframework.web.bind.annotation.*
 
 @CrossOrigin
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*
 class WerewolfRoomController {
 
     @PostMapping("/list")
-    fun queryRooms(@RequestBody werewolfRoomQuery: WerewolfRoomQueryDTO): List<WerewolfRoomVO> {
-        return ArrayList()
+    fun queryRooms(@RequestBody werewolfRoomQuery: WerewolfRoomDTO): WerewolfRoomPageVO? {
+        return null
     }
 
 }

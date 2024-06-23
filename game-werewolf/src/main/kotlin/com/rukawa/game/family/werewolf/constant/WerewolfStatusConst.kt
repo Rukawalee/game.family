@@ -1,21 +1,21 @@
 package com.rukawa.game.family.werewolf.constant
 
-enum class WerewolfStatus(var code: Int) {
+enum class WerewolfStatusConst {
 
     /**
-     * 死亡
+     * 出局
      */
-    DEATH(0),
+    OUT,
 
     /**
      * 存活
      */
-    SURVIVE(1),
+    REMAIN,
 
 
     /**
      * 胜利
      */
-    WIN(2)
+    WIN
 
 }
