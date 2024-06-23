@@ -15,7 +15,7 @@ class GameExceptionAdvice {
 
     @ResponseBody
     @ExceptionHandler(Exception::class)
-    fun exception(e:Exception): GameResponseVO<Any> {
+    fun exception(e: Exception): GameResponseVO<Any> {
         var response: GameResponseVO<Any> = GameResponseVO()
         val errorMsg = ExceptionUtils.getMessage(e)
         response.fail(HttpStatus.INTERNAL_SERVER_ERROR, errorMsg)

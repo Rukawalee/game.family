@@ -5,7 +5,7 @@ import com.rukawa.game.family.common.dto.PageQueryDTO
 /**
  * 狼人杀房间查询对象
  */
-class WerewolfRoomQueryDTO: PageQueryDTO() {
+class WerewolfRoomQueryDTO : PageQueryDTO() {
 
     /**
      * 房间名

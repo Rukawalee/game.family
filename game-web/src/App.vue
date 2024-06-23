@@ -1,49 +1,40 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useAppStore } from '@/store/modules/app'
-import { ConfigGlobal } from '@/components/ConfigGlobal'
-import { useDesign } from '@/hooks/web/useDesign'
+import { computed } from 'vue';
+import { NConfigProvider, darkTheme } from 'naive-ui';
+import { useAppStore } from './store/modules/app';
+import { useThemeStore } from './store/modules/theme';
+import { naiveDateLocales, naiveLocales } from './locales/naive';
 
-const { getPrefixCls } = useDesign()
+defineOptions({
+  name: 'App'
+});
 
-const prefixCls = getPrefixCls('app')
+const appStore = useAppStore();
+const themeStore = useThemeStore();
 
-const appStore = useAppStore()
+const naiveDarkTheme = computed(() => (themeStore.darkMode ? darkTheme : undefined));
 
-const currentSize = computed(() => appStore.getCurrentSize)
+const naiveLocale = computed(() => {
+  return naiveLocales[appStore.locale];
+});
 
-const greyMode = computed(() => appStore.getGreyMode)
-
-appStore.initTheme()
+const naiveDateLocale = computed(() => {
+  return naiveDateLocales[appStore.locale];
+});
 </script>
 
 <template>
-  <ConfigGlobal :size="currentSize">
-    <RouterView :class="greyMode ? `${prefixCls}-grey-mode` : ''" />
-  </ConfigGlobal>
+  <NConfigProvider
+    :theme="naiveDarkTheme"
+    :theme-overrides="themeStore.naiveTheme"
+    :locale="naiveLocale"
+    :date-locale="naiveDateLocale"
+    class="h-full"
+  >
+    <AppProvider>
+      <RouterView class="bg-layout" />
+    </AppProvider>
+  </NConfigProvider>
 </template>
 
-<style lang="less">
-@prefix-cls: ~'@{namespace}-app';
-
-.size {
-  width: 100%;
-  height: 100%;
-}
-
-html,
-body {
-  padding: 0 !important;
-  margin: 0;
-  overflow: hidden;
-  .size;
-
-  #app {
-    .size;
-  }
-}
-
-.@{prefix-cls}-grey-mode {
-  filter: grayscale(100%);
-}
-</style>
+<style scoped></style>

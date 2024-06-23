@@ -1,53 +1,31 @@
-import 'vue/jsx'
+import { createApp } from 'vue';
+import './plugins/assets';
+import { setupAppVersionNotification, setupDayjs, setupIconifyOffline, setupLoading, setupNProgress } from './plugins';
+import { setupStore } from './store';
+import { setupRouter } from './router';
+import { setupI18n } from './locales';
+import App from './App.vue';
 
-// 引入unocss
-import '@/plugins/unocss'
+async function setupApp() {
+  setupLoading();
 
-// 导入全局的svg图标
-import '@/plugins/svgIcon'
+  setupNProgress();
 
-// 初始化多语言
-import { setupI18n } from '@/plugins/vueI18n'
+  setupIconifyOffline();
 
-// 引入状态管理
-import { setupStore } from '@/store'
+  setupDayjs();
 
-// 全局组件
-import { setupGlobCom } from '@/components'
+  const app = createApp(App);
 
-// 引入element-plus
-import { setupElementPlus } from '@/plugins/elementPlus'
+  setupStore(app);
 
-// 引入全局样式
-import '@/styles/index.less'
+  await setupRouter(app);
 
-// 引入动画
-import '@/plugins/animate.css'
+  setupI18n(app);
 
-// 路由
-import { setupRouter } from './router'
+  setupAppVersionNotification();
 
-import { createApp } from 'vue'
-
-import App from './App.vue'
-
-import './permission'
-
-// 创建实例
-const setupAll = async () => {
-  const app = createApp(App)
-
-  await setupI18n(app)
-
-  setupStore(app)
-
-  setupGlobCom(app)
-
-  setupElementPlus(app)
-
-  setupRouter(app)
-
-  app.mount('#app')
+  app.mount('#app');
 }
 
-setupAll()
+setupApp();

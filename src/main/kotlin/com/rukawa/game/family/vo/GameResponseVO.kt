@@ -30,7 +30,7 @@ class GameResponseVO<T> {
     /**
      * 成功
      */
-    fun success(t:T?): GameResponseVO<T> {
+    fun success(t: T?): GameResponseVO<T> {
         this.data = t
         this.code = HttpStatus.OK.value()
         this.reason = HttpStatus.OK.reasonPhrase
@@ -40,7 +40,7 @@ class GameResponseVO<T> {
     /**
      * 失败
      */
-    fun fail(responseStatus: HttpStatus, errorMsg:String): GameResponseVO<T> {
+    fun fail(responseStatus: HttpStatus, errorMsg: String): GameResponseVO<T> {
         this.code = responseStatus.value()
         this.reason = responseStatus.reasonPhrase
         this.msg = errorMsg

@@ -32,7 +32,7 @@ class GameResponseAdvice : ResponseBodyAdvice<Any> {
         request: ServerHttpRequest,
         response: ServerHttpResponse
     ): Any? {
-        var response:GameResponseVO<Any> = GameResponseVO()
+        var response: GameResponseVO<Any> = GameResponseVO()
         try {
             response.success(body)
         } catch (e: Exception) {

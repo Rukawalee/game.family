@@ -56,5 +56,4 @@ class WerewolfRoom {
     var thirdSeats: Set<Int> = HashSet()
 
 
-
 }

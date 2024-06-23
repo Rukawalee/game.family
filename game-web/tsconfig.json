@@ -1,37 +1,26 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
+    "target": "ESNext",
     "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
     "jsxImportSource": "vue",
-    "lib": ["esnext", "dom"],
-    "baseUrl": "./",
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "strictFunctionTypes": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "experimentalDecorators": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     },
-    "types": [
-      "@intlify/unplugin-vue-i18n/types",
-      "vite/client",
-      "element-plus/global",
-      "@types/qrcode",
-      "vite-plugin-svg-icons/client"
-    ]
+    "resolveJsonModule": true,
+    "types": ["vite/client", "node", "unplugin-icons/types/vue", "naive-ui/volar"],
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
   },
-  "include": ["src", "types/**/*.d.ts", "mock/**/*.ts"]
-  // "exclude": ["dist", "node_modules"]
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.vue"],
+  "exclude": ["node_modules", "dist"]
 }

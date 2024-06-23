@@ -2,7 +2,7 @@ package com.rukawa.game.family.werewolf.cache
 
 import com.rukawa.game.family.player.dto.PlayerDTO
 import com.rukawa.game.family.werewolf.constant.WerewolfRole
-import com.rukawa.game.family.werewolf.enums.WerewolfStatus
+import com.rukawa.game.family.werewolf.constant.WerewolfStatus
 
 /**
  * 狼人杀座位
