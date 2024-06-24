@@ -5,6 +5,8 @@ import com.rukawa.game.family.werewolf.dto.skill.WerewolfSkillDTO
 
 class WerewolfRoleDTO {
 
+    var roleIcon: String? = null
+
     var roleName: String? = null
 
     var roleIntroduction: String? = null

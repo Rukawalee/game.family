@@ -15,7 +15,7 @@ object WerewolfRoleConverter {
      * @param role
      * @return
      */
-    fun enumRole2RoleDTO(role: WerewolfRoleConst?): WerewolfRoleDTO {
+    fun roleEnum2RoleDTO(role: WerewolfRoleConst?): WerewolfRoleDTO {
         val werewolfRoleDTO = WerewolfRoleDTO()
         if (Objects.isNull(role)) {
             return werewolfRoleDTO
@@ -35,8 +35,8 @@ object WerewolfRoleConverter {
      * @param roles
      * @return
      */
-    fun enumRoles2RoleDTOList(roles: List<WerewolfRoleConst>?): List<WerewolfRoleDTO>? {
-        return roles?.map { enumRole2RoleDTO(it) }
+    fun roleEnums2RoleDTOList(roles: List<WerewolfRoleConst>?): List<WerewolfRoleDTO>? {
+        return roles?.map { roleEnum2RoleDTO(it) }
     }
 
 }
