@@ -1,8 +1,6 @@
 package com.rukawa.game.family.player.dto
 
-class PlayerDTO {
-
-    var playerId: Int? = null
+class PlayerLoginCommand {
 
     var playerName: String? = null
 

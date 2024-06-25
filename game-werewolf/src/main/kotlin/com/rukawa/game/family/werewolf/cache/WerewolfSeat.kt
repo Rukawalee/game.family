@@ -1,6 +1,6 @@
 package com.rukawa.game.family.werewolf.cache
 
-import com.rukawa.game.family.player.dto.PlayerDTO
+import com.rukawa.game.family.player.dto.PlayerLoginCommand
 import com.rukawa.game.family.werewolf.constant.WerewolfRoleConst
 import com.rukawa.game.family.werewolf.constant.WerewolfStatusConst
 
@@ -22,7 +22,7 @@ class WerewolfSeat {
     /**
      * 玩家
      */
-    var player: PlayerDTO? = null
+    var player: PlayerLoginCommand? = null
 
     /**
      * 狼人杀角色

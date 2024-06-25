@@ -1,5 +1,7 @@
 package com.rukawa.game.family.route.advice
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.rukawa.game.family.vo.GameResponseVO
 import org.apache.commons.lang3.exception.ExceptionUtils
 import org.springframework.core.MethodParameter
@@ -32,14 +34,18 @@ class GameResponseAdvice : ResponseBodyAdvice<Any> {
         request: ServerHttpRequest,
         response: ServerHttpResponse
     ): Any? {
-        var response: GameResponseVO<Any> = GameResponseVO()
+        var resp: GameResponseVO<Any> = GameResponseVO()
         try {
-            response.success(body)
+            resp.success(body)
         } catch (e: Exception) {
             val errorMsg = ExceptionUtils.getMessage(e)
-            response.fail(HttpStatus.INTERNAL_SERVER_ERROR, errorMsg)
+            resp.fail(HttpStatus.INTERNAL_SERVER_ERROR, errorMsg)
         }
-        return response
+        if (returnType.parameterType != String::class.java) {
+            return resp
+        }
+        response.headers.contentType = MediaType.APPLICATION_JSON
+        return Gson().toJson(resp)
     }
 
 }

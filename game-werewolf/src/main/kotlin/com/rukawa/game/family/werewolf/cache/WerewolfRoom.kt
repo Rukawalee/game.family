@@ -1,6 +1,6 @@
 package com.rukawa.game.family.werewolf.cache
 
-import com.rukawa.game.family.player.dto.PlayerDTO
+import com.rukawa.game.family.player.dto.PlayerLoginCommand
 
 /**
  * 狼人杀房间
@@ -22,7 +22,7 @@ class WerewolfRoom {
      * key: playerId
      * value: playerDTO
      */
-    var playerMap: Map<Int, PlayerDTO> = HashMap()
+    var playerMap: Map<Int, PlayerLoginCommand> = HashMap()
 
     /**
      * 座位映射
