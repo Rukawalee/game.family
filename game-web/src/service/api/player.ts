@@ -19,7 +19,7 @@ export function fetchLogin(userName: string, password: string) {
 
 /** Get user info */
 export function fetchGetUserInfo() {
-  return request<Api.Auth.UserInfo>({ url: '/auth/getUserInfo' });
+  return request<Api.Auth.UserInfo>({ url: '/api/player/info' });
 }
 
 /**
@@ -29,7 +29,7 @@ export function fetchGetUserInfo() {
  */
 export function fetchRefreshToken(refreshToken: string) {
   return request<Api.Auth.LoginToken>({
-    url: '/auth/refreshToken',
+    url: '/api/player/refreshToken',
     method: 'post',
     data: {
       refreshToken
@@ -44,5 +44,5 @@ export function fetchRefreshToken(refreshToken: string) {
  * @param msg error message
  */
 export function fetchCustomBackendError(code: string, msg: string) {
-  return request({ url: '/auth/error', params: { code, msg } });
+  return request({ url: '/api/player/error', params: { code, msg } });
 }

@@ -1,4 +1,6 @@
 package com.rukawa.game.family.player.vo
 
-class PlayerInfoVO {
+import com.rukawa.game.family.player.dto.PlayerDTO
+
+class PlayerInfoVO : PlayerDTO() {
 }
