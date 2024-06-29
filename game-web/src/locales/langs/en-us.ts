@@ -246,8 +246,8 @@ const local: App.I18n.Schema = {
       devDep: 'Development Dependency'
     },
     home: {
-      greeting: 'Good morning, {userName}, today is another day full of vitality!',
-      weatherDesc: 'Today is cloudy to clear, 20℃ - 25℃!',
+      greeting: '{userName}, today is another day full of vitality!',
+      weatherDesc: 'Today is testing weather...',
       projectCount: 'Project Count',
       todo: 'Todo',
       message: 'Message',

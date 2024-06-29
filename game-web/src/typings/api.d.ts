@@ -59,6 +59,7 @@ declare namespace Api {
     interface UserInfo {
       playerId: string;
       playerName: string;
+      playerIcon: string;
       roles: string[];
       buttons: string[];
     }

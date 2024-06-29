@@ -246,8 +246,8 @@ const local: App.I18n.Schema = {
       devDep: '开发依赖'
     },
     home: {
-      greeting: '早安，{userName}, 今天又是充满活力的一天!',
-      weatherDesc: '今日多云转晴，20℃ - 25℃!',
+      greeting: '{userName}, 今天又是充满活力的一天!',
+      weatherDesc: '今日天气检测中...',
       projectCount: '项目数',
       todo: '待办',
       message: '消息',

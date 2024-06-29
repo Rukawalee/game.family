@@ -1,9 +1,7 @@
 package com.rukawa.game.family.player.vo
 
-class PlayerTokenVO {
+import com.rukawa.game.family.player.dto.PlayerTokenDTO
 
-    var token: String? = null
-
-    var refreshToken: String? = null
+class PlayerTokenVO: PlayerTokenDTO() {
 
 }

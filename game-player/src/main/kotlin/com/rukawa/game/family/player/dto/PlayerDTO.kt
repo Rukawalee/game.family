@@ -17,4 +17,14 @@ open class PlayerDTO {
      */
     var playerIcon: String? = null
 
+    /**
+     * token
+     */
+    var token: String? = null
+
+    /**
+     * refreshToken
+     */
+    var refreshToken: String? = null
+
 }

@@ -44,11 +44,11 @@ const statisticData = computed<StatisticData[]>(() => [
       <NGi span="24 s:24 m:18">
         <div class="flex-y-center">
           <div class="size-72px shrink-0 overflow-hidden rd-1/2">
-            <img src="@/assets/imgs/soybean.jpg" class="size-full" />
+            <img :src="authStore.userInfo.playerIcon" class="size-full" />
           </div>
           <div class="pl-12px">
             <h3 class="text-18px font-semibold">
-              {{ $t('page.home.greeting', { userName: authStore.userInfo.userName }) }}
+              {{ $t('page.home.greeting', { userName: authStore.userInfo.playerName }) }}
             </h3>
             <p class="text-#999 leading-30px">{{ $t('page.home.weatherDesc') }}</p>
           </div>

@@ -1,4 +1,15 @@
 package com.rukawa.game.family.player.factory
 
-class PlayerIDFactory {
+import java.util.concurrent.atomic.AtomicInteger
+
+object PlayerIDFactory {
+
+    private val playerId: AtomicInteger = AtomicInteger()
+
+    fun uniqueId(): Int? {
+        synchronized(playerId) {
+            return playerId.incrementAndGet()
+        }
+    }
+
 }

@@ -4,16 +4,15 @@ import com.aventrix.jnanoid.jnanoid.NanoIdUtils
 import com.rukawa.game.family.player.adapter.PlayerIconAdapter
 import com.rukawa.game.family.player.cache.PlayerCenter
 import com.rukawa.game.family.player.converter.PlayerConverter
+import com.rukawa.game.family.player.dto.PlayerDTO
 import com.rukawa.game.family.player.dto.PlayerLoginCommand
 import com.rukawa.game.family.player.dto.PlayerTokenDTO
-import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
 
-@Slf4j
 @Service
-class PlayerLoginService {
+class PlayerService {
 
     @Autowired
     private lateinit var playerCenter: PlayerCenter
@@ -25,9 +24,11 @@ class PlayerLoginService {
      * 校验玩家登录有效性
      */
     fun isLoginValid(token: String?): Boolean {
-        val onlinePlayer = playerCenter.onlinePlayerMap
-            .getIfPresent(token)
-        return Objects.nonNull(onlinePlayer)
+        return token?.let {
+            playerCenter.onlinePlayerMap.getIfPresent(token)
+        }.let {
+            Objects.nonNull(it)
+        }
     }
 
     /**
@@ -49,6 +50,50 @@ class PlayerLoginService {
             playerToken.refreshToken = refreshToken
             playerToken
         }
+    }
+
+    /**
+     * 查询玩家token
+     */
+    fun queryPlayerToken(token: String?): PlayerTokenDTO? {
+        return token?.let {
+            playerCenter.onlinePlayerMap.getIfPresent(token)
+        }?.let {
+            val playerTokenDTO = PlayerTokenDTO()
+            playerTokenDTO.token = it.token
+            playerTokenDTO.refreshToken = it.refreshToken
+            playerTokenDTO
+        }
+    }
+
+    /**
+     * 查询玩家信息
+     */
+    fun queryPlayer(token: String?): PlayerDTO? {
+        return token?.let {
+            playerCenter.onlinePlayerMap.getIfPresent(token)
+        }
+    }
+
+    /**
+     * 更新玩家登录token
+     */
+    fun refreshToken(refreshToken: String?): PlayerTokenDTO? {
+        return refreshToken
+            ?.let {
+                playerCenter.refreshOnlinePlayerMap.getIfPresent(refreshToken)
+            }
+            ?.let {
+                it.token = NanoIdUtils.randomNanoId()
+                it.refreshToken = NanoIdUtils.randomNanoId()
+                playerCenter.onlinePlayerMap.put(it.token, it)
+                playerCenter.refreshOnlinePlayerMap.put(it.refreshToken, it)
+
+                val playerTokenDTO = PlayerTokenDTO()
+                playerTokenDTO.token = it.token
+                playerTokenDTO.refreshToken = it.refreshToken
+                playerTokenDTO
+            }
     }
 
 }

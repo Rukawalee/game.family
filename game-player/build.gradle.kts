@@ -10,6 +10,9 @@ repositories {
 }
 
 dependencies {
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
+    implementation("com.aventrix.jnanoid:jnanoid:2.0.0")
+
     testImplementation(kotlin("test"))
 }
 
