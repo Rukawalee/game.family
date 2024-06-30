@@ -17,7 +17,6 @@ interface CardData {
     end: string;
   };
   icon: string;
-  localIcon: string;
 }
 
 const cardData = computed<CardData[]>(() => [
@@ -30,8 +29,7 @@ const cardData = computed<CardData[]>(() => [
       start: '#865ec0',
       end: '#5144b4'
     },
-    icon: undefined,
-    localIcon: 'werewolf-head'
+    icon: 'game-icons:werewolf'
   }
 ]);
 
@@ -61,7 +59,7 @@ function getGradientColor(color: CardData['color']) {
         <GradientBg :gradient-color="getGradientColor(item.color)" class="flex-1">
           <h3 class="text-16px">{{ item.title }}</h3>
           <div class="flex justify-between pt-12px">
-            <SvgIcon :icon="item.icon" :local-icon="item.localIcon" class="text-42px" />
+            <SvgIcon :icon="item.icon" class="text-42px" />
             <CountTo
               :prefix="item.unit"
               :start-value="1"
