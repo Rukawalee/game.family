@@ -6,7 +6,7 @@ defineOptions({
 
 <template>
   <DarkModeContainer class="h-full flex-center">
-    <a href="https://github.com/soybeanjs/soybean-admin/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/Rukawalee/game.family" target="_blank" rel="noopener noreferrer">
       Copyright © 2024 Rukawalee
     </a>
   </DarkModeContainer>

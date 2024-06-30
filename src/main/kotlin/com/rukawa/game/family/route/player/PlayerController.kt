@@ -36,7 +36,6 @@ class PlayerController {
         }
         val queryPlayerToken = playerService.queryPlayerToken(token)
         return PlayerTokenConverter.DTO2VO(queryPlayerToken)
-
     }
 
     @GetMapping("/info")
