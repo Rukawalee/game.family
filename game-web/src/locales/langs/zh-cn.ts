@@ -261,6 +261,7 @@ const local: App.I18n.Schema = {
       visitCount: '访问量',
       turnover: '成交额',
       dealCount: '成交量',
+      werewolf: '狼人杀',
       projectNews: {
         title: '项目动态',
         moreNews: '更多动态',

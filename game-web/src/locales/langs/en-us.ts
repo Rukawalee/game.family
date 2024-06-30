@@ -261,6 +261,7 @@ const local: App.I18n.Schema = {
       visitCount: 'Visit Count',
       turnover: 'Turnover',
       dealCount: 'Deal Count',
+      werewolf: 'Werewolf',
       projectNews: {
         title: 'Project News',
         moreNews: 'More News',

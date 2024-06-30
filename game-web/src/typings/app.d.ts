@@ -436,6 +436,7 @@ declare namespace App {
           visitCount: string;
           turnover: string;
           dealCount: string;
+          werewolf: string;
           projectNews: {
             title: string;
             moreNews: string;

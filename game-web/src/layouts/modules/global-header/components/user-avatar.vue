@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, h } from 'vue';
 import type { VNode } from 'vue';
+import { NAvatar } from 'naive-ui';
 import { useAuthStore } from '@/store/modules/auth';
 import { useRouterPush } from '@/hooks/common/router';
 import { useSvgIcon } from '@/hooks/common/icon';
@@ -36,7 +37,12 @@ const options = computed(() => {
     {
       label: $t('common.userCenter'),
       key: 'user-center',
-      icon: SvgIconVNode({ icon: 'ph:user-circle', fontSize: 18 })
+      icon: () =>
+        h(NAvatar, {
+          round: true,
+          size: 'small',
+          src: authStore.userInfo.playerIcon
+        })
     },
     {
       type: 'divider',
@@ -80,8 +86,8 @@ function handleDropdown(key: DropdownKey) {
   <NDropdown v-else placement="bottom" trigger="click" :options="options" @select="handleDropdown">
     <div>
       <ButtonIcon>
-        <SvgIcon icon="ph:user-circle" class="text-icon-large" />
-        <span class="text-16px font-medium">{{ authStore.userInfo.userName }}</span>
+        <NAvatar round size="medium" :src="authStore.userInfo.playerIcon" />
+        <span class="text-16px font-medium">{{ authStore.userInfo.playerName }}</span>
       </ButtonIcon>
     </div>
   </NDropdown>
