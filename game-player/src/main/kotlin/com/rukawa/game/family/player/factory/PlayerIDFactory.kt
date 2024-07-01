@@ -7,9 +7,7 @@ object PlayerIDFactory {
     private val playerId: AtomicInteger = AtomicInteger()
 
     fun uniqueId(): Int? {
-        synchronized(playerId) {
-            return playerId.incrementAndGet()
-        }
+        return playerId.incrementAndGet()
     }
 
 }
