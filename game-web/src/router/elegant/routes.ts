@@ -175,7 +175,7 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'home',
       i18nKey: 'route.home',
-      icon: 'mdi:monitor-dashboard',
+      icon: 'game-icons:mushroom-house',
       order: 1
     }
   },
@@ -338,6 +338,16 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'user-center',
       i18nKey: 'route.user-center',
       hideInMenu: true
+    }
+  },
+  {
+    name: 'werewolf',
+    path: '/werewolf',
+    component: 'layout.base$view.werewolf',
+    props: true,
+    meta: {
+      title: 'werewolf',
+      i18nKey: 'route.werewolf'
     }
   }
 ];

@@ -23,7 +23,7 @@ const cardData = computed<CardData[]>(() => [
   {
     key: 'werewolf',
     title: $t('page.home.werewolf'),
-    value: 1026,
+    value: 0,
     unit: '',
     color: {
       start: '#865ec0',
