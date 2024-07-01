@@ -234,7 +234,7 @@ const local: App.I18n.Schema = {
     },
     about: {
       title: 'About',
-      introduction: `SoybeanAdmin is an elegant and powerful admin template, based on the latest front-end technology stack, including Vue3, Vite5, TypeScript, Pinia and UnoCSS. It has built-in rich theme configuration and components, strict code specifications, and an automated file routing system. In addition, it also uses the online mock data solution based on ApiFox. SoybeanAdmin provides you with a one-stop admin solution, no additional configuration, and out of the box. It is also a best practice for learning cutting-edge technologies quickly.`,
+      introduction: `GameFamily is a LAN game that integrates popular voice games designed to facilitate collaboration between teams and families. It leverages SoybeanAdmin, Kotlin, and Spring technologies.`,
       projectInfo: {
         title: 'Project Info',
         version: 'Version',
